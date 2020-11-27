@@ -72,7 +72,7 @@ For example.
 CREATE TABLE employees (
     id            INTEGER       PRIMARY KEY,
     first_name    VARCHAR(50)   not null,
-    last_name     VARCHAR(75)   not null,
+    last_name     VARCHAR(50)   not null,
     dateofbirth   DATE
     city          VARCHAR(50)   not null,
     country       VARCHAR(50)   not null,
@@ -106,14 +106,26 @@ WHERE country != 'Australia'
 
 # Question 6
 
-The inner join is used on two tables (eg. table_one and table_two) and creates a new resulting table by finding all pairs of rows in table_one and table_two that satisfy the join condition.
+The inner join combines the records from two tables tables based on a condition. Usually the condition tested is that a field in one
+table and the field in the other table have the exact same value. In that case, the record from one table and the other table are combined to form a new record in the results table.
+In other words, the inner join is used on two tables (eg. table_one and table_two) and creates a new resulting table by finding all pairs of rows in table_one and table_two that satisfy the join condition.
 Only when the join condition is satisfied will the column values of each matched pair in table_one and table_two be combined to form a result row.
+
+![](sql-inner-join.png)
+
 The syntax looks like:
 ```
-SELECT table_one.column_one, table_two.column_one...
-FROM table_one
-INNER JOIN table_two
-ON table_one.common_field = table_two.common_field;
+SELECT left_table.column_one, right_table.column_one, left_table.common_field,...
+FROM left_table
+INNER JOIN right_table
+ON left_table.common_field = right_table.common_field;
 ```
-As can be seen from the syntax above, the INNER JOIN only occurs when the value of the attribute 'commonfield' in table_one is the same as the value of the attribute 'commonfield' in table_two.
-When this is the case, the record from table_one and the record from table_two are joined and form a new record.
+As can be seen from the syntax above, the INNER JOIN between the two tables only occurs when the value of the attribute 'commonfield' in left_table is the same as the value of the attribute 'commonfield' in right_table.
+When this is the case, the record from left_table and the record from right_table are joined and form a new record.
+
+Example: 
+
+![](Question6_inner_join_example.PNG)
+
+We can perform an inner join on the student and city tables because they both share a common field of city_code. 
+The inner join could be used to help use find out which country each of the student's belong too.
