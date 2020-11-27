@@ -1,6 +1,6 @@
 ### Developer Workbook - Database Systems. Term3 Assignment 1 T3A1
 
-# Question 1
+## Question 1
 
 A database table in a relational database is like a grid with rows and columns. 
 Each row is made up of a data record and in each column refers to a particular attribute that the records all have. The attribute has both a name and a data type.
@@ -11,7 +11,7 @@ They can consist of one or multiple columns. For example, a driver license numbe
 Therefore, driver license number and mobile number would be suitable as a primary key in a database for storing driver info or mobile phone info respectively.
 
 
-# Question 2
+## Question 2
 
 The three possible relationships between entities in a relational database are one-to-one, one-to-many and many-to-many. 
 One-to-one relationship: One record/row in a table can only be associated with one record/row in another table, and vice-versa.
@@ -31,7 +31,7 @@ In our example, our joining table would contain two foreign keys which are stude
 The joining table (enrolment) will only accept a student ID and a subjectID combination if the studentID already exists as a primary key entry in the student table and the subjectID already exists as a primary key entry within the subject table.
 
 
-# Question 3
+## Question 3
 
 Three types of constraints are check, not null and foreign key.
 
@@ -48,7 +48,7 @@ The foreign key ensure referencial integrity when new records are inserted.
 For example, a table called Order could have a foreign key constraint which refers to another table called Customer.
 An order should always be made by an existing customer so the customerid in the order table should appear in the customerid column of the customer table.
 
-# Question 4
+## Question 4
 
 Data types enforce data integrity by ensuring that all values in a particular column are of the same datatype and of a datatype that makes logical sense.
 It would be wrong to have say a column for the customer's name but allow entries that are boolean or integers. A customer name entry of True or 1234 would clearly be an error and therefore should not be allowed.
@@ -62,7 +62,7 @@ In SQL, the data type DATETIME is formatted YYYY-MM-DD HH:MI:SS.
 This ensures that all dates and times entered into the database table follow this format so that there are no formatting errors.
 
 
-# Question 5
+## Question 5
 
 The CREATE TABLE keywords are apart of a Data Defintion Language (DDL) command which allows for creating a table.
 Along with those keywords, we specify the name of the table and the column definitions. Each column has a name and a datatype.
@@ -98,7 +98,7 @@ WHERE country != 'Australia'
 
 
 
-### Question 6
+## Question 6
 
 The inner join is used on two tables (eg. table_one and table_two) and creates a new resulting table by finding all pairs of rows in table_one and table_two that satisfy the join condition.
 Only when the join condition is satisfied will the column values of each matched pair in table_one and table_two be combined to form a result row.
