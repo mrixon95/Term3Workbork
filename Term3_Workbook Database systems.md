@@ -67,6 +67,8 @@ This ensures that all dates and times entered into the database table follow thi
 The CREATE TABLE keywords are apart of a Data Defintion Language (DDL) command which allows for creating a table.
 Along with those keywords, we specify the name of the table and the column definitions. Each column has a name and a datatype.
 For example. 
+
+```
 CREATE TABLE employees (
     id            INTEGER       PRIMARY KEY,
     first_name    VARCHAR(50)   not null,
@@ -75,27 +77,31 @@ CREATE TABLE employees (
     city          VARCHAR(50)   not null,
     country       VARCHAR(50)   not null,
 );
+```
 
 The UPDATE and SET keywords can be used as part of a Data Manipulation Language (DML) command which modifies existing records in a table if they satisfy a condition.
 It is structured like this:
+```
 UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
+```
 
 An example could be setting the country value to be 'Australia' when the city value is either 'Sydney', 'Melbourne' or 'Gold Coast'.
 The SQL command would be
-
+```
 UPDATE employees
 SET country='Australia'
 WHERE city IN ('Sydney', 'Melbourne', 'Gold Coast');
-
+```
 
 The DELETE operator is used along with a WHERE clause to remove particular records from a database.
 For example. we may only want Australian employees in our database table and we therefore want to delete all employee records who are not from Australia.
 Hence we could write
+```
 DELETE FROM employees
 WHERE country != 'Australia'
-
+```
 
 
 # Question 6
@@ -103,11 +109,11 @@ WHERE country != 'Australia'
 The inner join is used on two tables (eg. table_one and table_two) and creates a new resulting table by finding all pairs of rows in table_one and table_two that satisfy the join condition.
 Only when the join condition is satisfied will the column values of each matched pair in table_one and table_two be combined to form a result row.
 The syntax looks like:
-
+```
 SELECT table_one.column_one, table_two.column_one...
 FROM table_one
 INNER JOIN table_two
 ON table_one.common_field = table_two.common_field;
-
+```
 As can be seen from the syntax above, the INNER JOIN only occurs when the value of the attribute 'commonfield' in table_one is the same as the value of the attribute 'commonfield' in table_two.
 When this is the case, the record from table_one and the record from table_two are joined and form a new record.
