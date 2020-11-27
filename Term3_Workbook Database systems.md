@@ -13,19 +13,20 @@ Therefore, driver license number and mobile number would be suitable as a primar
 
 # Question 2
 
-The three possible relationships between entities in a relational database are one-to-one, one-to-many and many-to-many. 
-One-to-one relationship: One record/row in a table can only be associated with one record/row in another table, and vice-versa.
+The three possible relationships between entities in a relational database are *one-to-one*, *one-to-many* and *many-to-many*. 
+
+*One-to-one relationship*: One record/row in a table can only be associated with one record/row in another table, and vice-versa.
 For example, a student entity and a contact info entity would have a one-to-one relationship. Each student has only one contact info record and a contact info record
 can only belong to one student.
-One-to-many relationship: One record/row in a table can be associated with many records/rows in another table.
+*One-to-many relationship*: One record/row in a table can be associated with many records/rows in another table.
 For example: a high-school entity and a student entity would have a one-to many relationship. A high-school may have many students enrolled. However, a student may only be enrolled in one high-school.
 
-Many-to-many relationship: Many records/rows in a table can be associated with many records/rows in another table.
+*Many-to-many relationship*: Many records/rows in a table can be associated with many records/rows in another table.
 For example: a student entity could enrol in many different subjects. Like-wise, a single subject can have many different students enrolled in it.
 
 Primary keys and foreign keys can be used to create a many-to many relationship between tables.
 
-Now, a many-to-many relationship requires a joining/bridging table. This table is used to store a record for each combination of the other two tables.
+Now, a many-to-many relationship requires a *joining/bridging table*. This table is used to store a record for each combination of the other two tables.
 In our case, this record is the combination of studentID and subjectID and this combination describes which student enrolled in which subject.
 In our example, our joining table would contain two foreign keys which are studentID and courseID. Foreign keys values are constrained in that their value must already exist as a primary key value within another table.
 The joining table (enrolment) will only accept a student ID and a subjectID combination if the studentID already exists as a primary key entry in the student table and the subjectID already exists as a primary key entry within the subject table.
@@ -33,17 +34,17 @@ The joining table (enrolment) will only accept a student ID and a subjectID comb
 
 # Question 3
 
-Three types of constraints are check, not null and foreign key.
+Three types of constraints are **check**, **not null** and **foreign key**.
 
-The check constraint limits the range of values that a particular attribute or set of attributes can have. This constraint ensures that the value entered must satisfy a logical, boolean expression. If the value does not satisfy the expression, it is not inserted into the table.
+1. The **check constraint** limits the range of values that a particular attribute or set of attributes can have. This constraint ensures that the value entered must satisfy a logical, boolean expression. If the value does not satisfy the expression, it is not inserted into the table.
 The constraint helps to ensure that bad data does not mistakenly get inserted into the database table. For example, a CHECK constraint could be that product prices in a supermarket are greater than 0.
 No prices in the supermarket should be 0 or negative so this constraint makes sense. Any negative values would violate this constraint and cause an error. 
 
-The not null constraint ensures that a particular column/attribute cannot have a null value in it. This means that the particular attribute for that column must always have a value.
+2. The **not null constraint**  ensures that a particular column/attribute cannot have a null value in it. This means that the particular attribute for that column must always have a value.
 For example, a social media website could ensure that records in a user table must always have a name by constraining the name attribute to be NOT NULL. 
 This means that a record with the name attribute left empty would raise an error.
 
-The foreign key constraint ensures that a value in one table must also appear in another table. The table with the foreign key is called the child table and the referenced table is called the parent table.  
+3. The **foreign key constraint**  ensures that a value in one table must also appear in another table. The table with the foreign key is called the child table and the referenced table is called the parent table.  
 The foreign key ensure referencial integrity when new records are inserted.
 For example, a table called Order could have a foreign key constraint which refers to another table called Customer.
 An order should always be made by an existing customer so the customerid in the order table should appear in the customerid column of the customer table.
@@ -108,8 +109,8 @@ WHERE country != 'Australia'
 
 The inner join combines the records from two tables tables based on a condition. Usually the condition tested is that a field in one
 table and the field in the other table have the exact same value. In that case, the record from one table and the other table are combined to form a new record in the results table.
-In other words, the inner join is used on two tables (eg. table_one and table_two) and creates a new resulting table by finding all pairs of rows in table_one and table_two that satisfy the join condition.
-Only when the join condition is satisfied will the column values of each matched pair in table_one and table_two be combined to form a result row.
+In other words, the inner join is used on two tables (eg. left_table and right_table) and creates a new resulting table by finding all pairs of rows in left_table and right_table that satisfy the join condition.
+Only when the join condition is satisfied will the column values of each matched pair in left_table and right_table be combined to form a row in the resulting table.
 
 ![](sql-inner-join.png)
 
@@ -123,7 +124,7 @@ ON left_table.common_field = right_table.common_field;
 As can be seen from the syntax above, the INNER JOIN between the two tables only occurs when the value of the attribute 'commonfield' in left_table is the same as the value of the attribute 'commonfield' in right_table.
 When this is the case, the record from left_table and the record from right_table are joined and form a new record.
 
-Example: 
+# Example: 
 
 ![](Question6_inner_join_example.PNG)
 
