@@ -8,7 +8,9 @@ Entries in a particular column are constrained to the datatype of the column's a
 
 Tables can have an important feature called a Primary Key. Primary keys are both unique and not null, and are used as a way to uniquely identify a tuple/row in the table. 
 They can consist of one or multiple columns. For example, a driver license number can uniquely identify a driver and a mobile number can uniquely identify a person who owns a mobile.
-Therefore, driver license number and mobile number would be suitable as a primary key in a database for storing driver info or mobile phone info respectively.
+Therefore, driver license number or mobile number would be suitable as a primary key in a database for storing driver info or mobile phone info respectively.
+
+![](Question1_PK.PNG)
 
 
 # Question 2
@@ -18,11 +20,18 @@ The three possible relationships between entities in a relational database are *
 *One-to-one relationship*: One record/row in a table can only be associated with one record/row in another table, and vice-versa.
 For example, a student entity and a contact info entity would have a one-to-one relationship. Each student has only one contact info record and a contact info record
 can only belong to one student.
+
+![](Question2_one_to_one_relationship.PNG)
+
 *One-to-many relationship*: One record/row in a table can be associated with many records/rows in another table.
 For example: a high-school entity and a student entity would have a one-to many relationship. A high-school may have many students enrolled. However, a student may only be enrolled in one high-school.
 
+![](Question2_one_to_many_relationship.PNG)
+
+
 *Many-to-many relationship*: Many records/rows in a table can be associated with many records/rows in another table.
 For example: a student entity could enrol in many different subjects. Like-wise, a single subject can have many different students enrolled in it.
+
 
 Primary keys and foreign keys can be used to create a many-to many relationship between tables.
 
@@ -31,6 +40,7 @@ In our case, this record is the combination of studentID and subjectID and this 
 In our example, our joining table would contain two foreign keys which are studentID and courseID. Foreign keys values are constrained in that their value must already exist as a primary key value within another table.
 The joining table (enrolment) will only accept a student ID and a subjectID combination if the studentID already exists as a primary key entry in the student table and the subjectID already exists as a primary key entry within the subject table.
 
+![](Question2_many_to_many_relationship.PNG)
 
 # Question 3
 
@@ -49,6 +59,27 @@ The foreign key ensure referencial integrity when new records are inserted.
 For example, a table called Order could have a foreign key constraint which refers to another table called Customer.
 An order should always be made by an existing customer so the customerid in the order table should appear in the customerid column of the customer table.
 
+
+eg. Here is an example of two tables to illustrate the use of constraints. Between the two tables, they use multiple check and not null constraints, as well as a foreign key constraint.
+
+```
+CREATE TABLE products (
+    product_no integer PRIMARY KEY,
+    name text NOT NULL,
+    price numeric NOT NULL CHECK (price > 0),
+    discounted_price numeric CHECK (discounted_price > 0),
+    CONSTRAINT valid_discount CHECK (price > discounted_price)
+);
+
+CREATE TABLE orders (
+    order_id integer PRIMARY KEY,
+    product_no integer REFERENCES products (product_no),
+    quantity integer,
+    date_of_order date NOT NULL,
+    CONSTRAINT valid_quantity CHECK (quantity > 0)
+);
+```
+
 # Question 4
 
 Data types enforce data integrity by ensuring that all values in a particular column are of the same datatype and of a datatype that makes logical sense.
@@ -65,7 +96,7 @@ This ensures that all dates and times entered into the database table follow thi
 
 # Question 5
 
-The CREATE TABLE keywords are apart of a Data Defintion Language (DDL) command which allows for creating a table.
+The CREATE TABLE keywords are used in the Data Defintion Language (DDL) command which allows for creating a table.
 Along with those keywords, we specify the name of the table and the column definitions. Each column has a name and a datatype.
 For example. 
 
@@ -98,6 +129,7 @@ WHERE city IN ('Sydney', 'Melbourne', 'Gold Coast');
 
 The DELETE operator is used along with a WHERE clause to remove particular records from a database.
 For example. we may only want Australian employees in our database table and we therefore want to delete all employee records who are not from Australia.
+
 Hence we could write
 ```
 DELETE FROM employees
