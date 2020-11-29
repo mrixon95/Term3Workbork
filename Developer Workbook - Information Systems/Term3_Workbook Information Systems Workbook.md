@@ -37,7 +37,7 @@ Users need to access the database to get information about drivers near to them.
 
 # Question 3.
 
-The organisation I chose was Udemy.com ![](Udemy_logo.png)
+The organisation I chose was Udemy.com ![](Udemy_logo.png =100x20)
 ![](Application_Architecture_Diagram.png)
 
 Services:
