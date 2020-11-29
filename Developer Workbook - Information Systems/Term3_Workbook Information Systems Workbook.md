@@ -3,7 +3,10 @@
 
 # Question 1.
 
-Data Flow Diagram for Uber  ![](uber_logo.jpg)
+![](uber_logo.jpg)
+
+### Data Flow Diagram for Uber  
+
 
 ![](Data_Flow_Diagram.png)
 
@@ -27,7 +30,7 @@ For those drivers who have been approved, they will be sent data so that they ar
 
 ![](Application_Architecture_Diagram.png)
 
-### Explanation of the operation of the business function using a architecure diagram:
+### Explanation of the operation of the business function using an architecure diagram:
 
 The architecture diagram above is what I imagine that Uber could use for storing its databases. Firstly the databases that Uber use include both Redis and PostgreSQL, as mentioned by stackshare https://stackshare.io/uber-technologies/uber. The EC2 instance that holds the databases should be within a private subnet so that it is inaccessible by the public internet. Indeed this is very important given that User's credit card details and driver's licence details are stored by Uber in a database.
 
@@ -37,10 +40,12 @@ Users need to access the database to get information about drivers near to them.
 
 # Question 3.
 
-The organisation I chose was Udemy.com ![](Udemy_logo.png =100x20)
-![](Application_Architecture_Diagram.png)
+The organisation I chose was Udemy.com
 
-Services:
+![](Udemy_logo.png)
+
+
+### Two Services:
 
 1. In Udemy.com, you can add products to a shopping cart. This is a service on the Udemy.com website.
 The front-end is implemented using ReactJS. ReactJS allows developers to create large web applications that changes data without having to reload the webpage.
