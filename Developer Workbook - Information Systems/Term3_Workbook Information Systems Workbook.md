@@ -61,7 +61,7 @@ If Udemy were to use an SQL database for this then lots of time would be wasted 
 Also, you can use a NoSQL database when data consistency and ACID compliance is not important. In Udemy, each course has no stock limit so each one can be bought an infinite amount of times and the order that users buy each course does not matter. The opposite scenario would be a bank's database where the order of transactions in that database does matter. If only part of a transaction is performed when another transaction starts, then a user's account balance could be  left in an inconsistent state which could lead to major problems. 
 Therefore, Udemy is well suited to using a NoSQL database like Redis because of the flexibility it provides and because it does not need ACID compliance.
 
-Here's an example of a User object in NoSQl which can have multiple courses easily added to it
+Here's an example of a User object in NoSQL which can have multiple courses easily added to it
 
 
 ![](NoSQL_Example.PNG)
