@@ -40,12 +40,11 @@ Users need to access the database to get information about drivers near to them.
 
 # Question 3.
 
-The organisation I chose was Udemy.com
 
 ![](Udemy_logo.png)
 
 
-### Two Services:
+### Two services on Udemy.com:
 
 1. In Udemy.com, you can add products to a shopping cart. This is a service on the Udemy.com website.
 The front-end is implemented using ReactJS. ReactJS allows developers to create large web applications that changes data without having to reload the webpage.
