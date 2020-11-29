@@ -42,7 +42,7 @@ Users need to access the database to get information about drivers near to them.
 
 The organisation I chose was Udemy.com
 
-![](Udemy_Logo.png)
+![](Udemy_logo.png)
 
 
 ### Two Services:
