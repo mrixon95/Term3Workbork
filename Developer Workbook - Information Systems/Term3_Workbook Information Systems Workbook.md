@@ -3,7 +3,7 @@
 
 # Question 1.
 
-Data Flow Diagram for Uber  ![](uber_logo.png)
+Data Flow Diagram for Uber  ![](uber_logo.jpg)
 
 ![](Data_Flow_Diagram.png)
 
@@ -37,7 +37,8 @@ Users need to access the database to get information about drivers near to them.
 
 # Question 3.
 
-The organisation I chose was Udemy.com
+The organisation I chose was Udemy.com ![](Udemy_logo.png)
+![](Application_Architecture_Diagram.png)
 
 Services:
 
