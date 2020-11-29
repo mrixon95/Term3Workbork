@@ -62,6 +62,8 @@ Also, you can use a NoSQL database when data consistency and ACID compliance is 
 Therefore, Udemy is well suited to using a NoSQL database like Redis because of the flexibility it provides and because it does not need ACID compliance.
 
 Here's an example of a User object in NoSQl which can have multiple courses easily added to it
+
+
 ![](NoSQL_Example.PNG)
 
 
